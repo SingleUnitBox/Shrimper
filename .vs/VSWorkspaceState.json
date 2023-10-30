@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ShrimperApi",
+    "\\ShrimperApi\\Properties",
+    "\\ShrimperCore",
+    "\\ShrimperInfrastructure",
+    "\\ShrimperTests",
+    "\\ShrimperTestsEndToEnd"
+  ],
+  "PreviewInSolutionExplorer": false
+}
