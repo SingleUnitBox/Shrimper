@@ -75,3 +75,5 @@ _[Ss]cripts
 *.dot[Cc]over
 *.testlog
 *.manifest
+*.vsdix
+*.v2
