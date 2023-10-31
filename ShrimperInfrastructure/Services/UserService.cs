@@ -28,6 +28,26 @@ namespace ShrimperInfrastructure.Services
             return _mapper.Map<UserDto>(user);
         }
 
+        public async Task<IEnumerable<UserDto>> GetAllAsync()
+        {
+            var users = _mapper.Map<IEnumerable<UserDto>>(await _userRepository.GetAllAsync());
+            return users;
+        }
+
+        public async Task LoginAsync(string email, string password)
+        {
+            var user = _userRepository.GetByEmailAsync(email);
+            if (user == null)
+            {
+                throw new Exception("Invalid credentials.");
+            }
+            if (user.Password == password)
+            {
+                return;
+            }
+            throw new Exception("Invalid credentials.");
+        }
+
         public void Register(string email, string username, string password)
         {
             var user = _userRepository.GetByEmailAsync(email);

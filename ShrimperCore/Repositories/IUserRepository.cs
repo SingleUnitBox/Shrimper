@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ShrimperCore.Repositories
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository
     {
         User GetByIdAsync(Guid id);
         User GetByEmailAsync(string email);
-        IEnumerable<User> GetAllAsync();
+        Task<IEnumerable<User>> GetAllAsync();
         void CreateAsync(User user);
         void UpdateAsync(User user);
         void DeleteAsync(Guid id);

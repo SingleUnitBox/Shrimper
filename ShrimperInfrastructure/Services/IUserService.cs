@@ -10,6 +10,9 @@ namespace ShrimperInfrastructure.Services
     public interface IUserService
     {
         UserDto Get(string email);
+        Task<IEnumerable<UserDto>> GetAllAsync();
         void Register(string email, string username, string password);
+        Task LoginAsync(string email, string password);
+
     }
 }

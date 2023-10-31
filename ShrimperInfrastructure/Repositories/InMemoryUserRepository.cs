@@ -19,8 +19,8 @@ namespace ShrimperInfrastructure.Repositories
             => _users.SingleOrDefault(x => x.Id == id);
         public User GetByEmailAsync(string email)
             => _users.SingleOrDefault(x => x.Email == email);
-        public IEnumerable<User> GetAllAsync()
-            => _users;
+        public async Task<IEnumerable<User>> GetAllAsync()
+            => await Task.FromResult(_users);
         public void CreateAsync(User user)
         {
             _users.Add(user);
@@ -33,6 +33,6 @@ namespace ShrimperInfrastructure.Repositories
         {
             var user = GetByIdAsync(id);
             _users.Remove(user);
-        }     
+        }
     }
 }
